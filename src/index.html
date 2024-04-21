@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
         integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Нормализация (чтобы в браузере выглядело прилично)-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
 
     <link rel="stylesheet" href="./css/styles.css">
 </head>
@@ -48,16 +51,16 @@
                 </div>
                 <h4 class="main-page_conten_text">Более 100 вариантов горных маршрутов по России под присмотром опытных
                     инструкторов</h4>
-                <button type="button" class="smooth-scroll main-page_content_buttom" href="#choice">Выбрать поход</button> <!-- Событие скролла №5 -->
+                <button type="button" class="smooth-scroll main-page_content_buttom" href="#contact-form">Выбрать поход</button> <!-- Событие скролла №5 -->
             </div>
         </section>
 
-        <!-- Популярные направления -->
-        <section id="tracks"> 
+        
+      <!--   <section id="tracks">
+            <div class="cardsname">
+                <h1 class="cardsname_content">Популярные направления</h1>
+            </div>
             <div class="card-group">
-                <div class="cardsname">
-                    <h1 class="cardsname_content">Популярные направления</h1>
-                </div>
                 <div class="card">
                     <img src="./assets/images/ergaki.jpg" class="card-img-top" alt="Image">
                     <div class="card-body">
@@ -81,28 +84,66 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+        
+        <!-- Я не понимаю, почему карусель не работает 😭 -->
+        <div class="f-carousel" id="myCarousel">
+            <div class="f-carousel__viewport">
+              <div class="f-carousel__track">
 
-        <section class="background" id="choice">
+                <div class="f-carousel__slide">
+                    <div class="card">
+                        <img src="./assets/images/ergaki.jpg" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Ергаки</h5>
+                            <p class="card-text">Живописное место в Хакассии, где можно найти даже Зуб Дракона</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="f-carousel__slide">
+                    <div class="card">
+                        <img src="./assets/images/Baikal.jpg" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Зимний Байкал</h5>
+                            <p class="card-text">Уникальная возможность покататься на коньках по озеру глубоной больше
+                                полутора километров</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="f-carousel__slide">
+                    <div class="card">
+                        <img src="./assets/images/Elbrus.jpg" class="card-img-top" alt="Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Эльбрус</h5>
+                            <p class="card-text">Знаменитый пятитысячник, расположившийся на юге России</p>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+
+        <section class="background">
             <div class="card-group">
                 <div class="cardsname">
                     <h2 class="cardsname_content">Выбрать маршрут</h2>
                 </div>
             </div>
             <div class="contact-form">
-                <form> <!--Из бутстрапа--> <!-- До этого элемента скроллим в событии №5 -->
+                <form id="contact-form"> <!--Из бутстрапа--> <!-- До этого элемента скроллим в событии №5 -->
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Введите ваше имя и номер телефона</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">Так мы сможем с вами связаться</div>
+                        <label for="username" class="form-label">Введите ваше имя и номер телефона</label>
+                        <input type="text"  class="form-control" id="username" name="username">
                     </div>
 
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Кратко опишите, в какой район вы бы хотели
-                            отправиться </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                        <label for="text" class="form-label">Кратко опишите, в какой район вы бы хотели отправиться </label>
+                        <textarea type="text" required class="form-control" id="text" name="text" rows="6"></textarea>
                     </div>
-                    <button type="button" class="main-page_content_buttom click-btn">отправить</button>
+                    <button type="submit" class="main-page_content_buttom click-btn">отправить</button>
                 </form>
             </div>
         </section>
@@ -127,7 +168,6 @@
                 <div class="flexbox_parent_child"><a href="/beautiful_places" class="flexbox_parent_child_text">Самые
                         красивые места России, которые стоит посетить</a></div>
             </div>
-        </section>
     </main>
     <footer>
         <section class="about-block">
@@ -145,11 +185,27 @@
         </section>
     </footer>
 
+    <script>
+        const form = document.getElementById('myForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            console.log('Данные формы:', formData);
+
+            // Дополнительные действия с данными формы
+        });
+    </script>
+
     <script src="./js/bundle.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
 </body>
 
 </html>
