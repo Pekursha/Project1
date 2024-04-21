@@ -1,3 +1,5 @@
+@import "./mixin.scss";
+
 $width: 1000px;
 $breakpoint: 799px;
 $nav-height: 65px;
@@ -31,7 +33,7 @@ body {
 .brandname {
   position: absolute;
   padding-left: 10px;
-  float: left; //указывает, что элемент должен быть размещён вдоль левой или правой стороны его контейнера//
+  float: left; //указывает, что элемент должен быть размещён вдоль левой или правой стороны его контейнера. Флот устравший. Чем заменить?//
   line-height: $nav-height;
   font-size: 1.5em;
   text-transform: $main-text-transform;
@@ -83,22 +85,27 @@ nav {
   }
 }
 
-.mainpage {
+.main-page {
   weight: 100%;
   height: 100%;
   background-image: url("../assets/images/snowmount.jpg");
   display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &_content {
     text-align: center;
     width: 100%; 
-    padding-top: 12%;
+    padding-top: 0%;
     margin: 3%;
     
     &_conteiner {
       padding-left: 39%;
       padding-right: 39%;
-      &_title2 {
+      h2 {
         color: $nav-font-color;
         font-size: 1.2em;
         text-transform:lowercase;
@@ -163,6 +170,8 @@ nav {
 // Form
 .background {
   background-image: url("../assets/images/img_for_sign_up.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .contact-form {
    padding: 16px;
@@ -194,20 +203,52 @@ nav {
 
 footer {
   background-color: $transparency-color;
-.parent2 {
+.about-block {
   display: flex;
   flex-flow: row nowrap;
   align-content: space-evenly;
   align-items: center;
   justify-content: center;
-  height: 50%;
+  height: 70%;
+  overflow:hidden;
 
-  &_child2 {
-   width: 20% + 15%;
-   text-align: center;
-   &_text {
-  color: $nav-background;
-   }
+  &_content {
+  text-align: left;
+  padding: 15%; // размер картинки //
+  position: relative;
+  box-sizing:border-box;
+  width:auto;
+    img {
+      position: absolute;
+      top: 0;
+      left: 10;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &_text {
+      color: $nav-background; 
+    }
   }
 }
+}
+
+.swiper {
+  width: 100%;
+  height: 300px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

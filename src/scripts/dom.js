@@ -1,1 +1,0 @@
-let ageTitle = document.getElementById("age")
