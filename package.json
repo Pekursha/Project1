@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "my first project",
   "main": "gulpfile.js",
-
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "browser-sync": "^3.0.2",
@@ -14,6 +13,7 @@
     "gulp-postcss": "^10.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
     "postcss": "^8.4.38",
     "sass": "^1.74.1"
@@ -22,7 +22,6 @@
     "start": "gulp",
     "build": "gulp build"
   },
-  
   "keywords": [
     "html",
     "css",

@@ -18,26 +18,20 @@ let ageTitle=document.getElementById("age");console.log("Hello world");
         elementToScroll.scrollIntoView({ behavior: 'smooth', block: 'center'}); 
       }); 
     } 
-  }; // Работает!!! 
-
-// Для кнопки
-  const button = document.querySelector('.click-btn');
-  const input = document.createInput.value; //хотелось валидировать данные, но что-то здесь не получается
-  if (!text) {
-    alert('Заполните поле!');
-    return
-  } 
-  else {
-    button.addEventListener("click", (event) => {
-    button.textContent = "отправлено";
-  });
-  }
+  }; // Работает!
 
 // Для подготовки отправки формы ввода данных
-const form = document.getElementById("contacts-form");
+const form = document.getElementById("contact-form"); 
+
+function handleFormSubmit(event) {
+  // Просим форму не отправлять данные самостоятельно
+  event.preventDefault()
+  console.log('Отправка!')
+}
 
 form.addEventListener("submit", (event) => {
-  event.preventDefault();
+  event.preventDefault(); // предотвращаем поведение браузера по умолчанию 
+  
 
   let data = Array.from(event.target.elements).map((element) => {
     return {
@@ -61,21 +55,12 @@ form.addEventListener("submit", (event) => {
   });
 
   console.log(formData);
-});
 
-// API c сервером
-fetch('https://dog.ceo/dog-api/')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Ошибка HTTP: ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log(data);
-        // Здесь можно обрабатывать полученные данные
-    })
-    .catch(error => console.error('Ошибка:', error));
+  form.addEventListener("submit", () => { //обработка отправки формы
+    button.textContent = "Отправлено";
+  })
+  
+});
 
 // API c браузером. LocalStorage
 localStorage.setItem('username', 'text'); // Сохранение данных

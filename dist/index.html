@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8"> <!-- Указываем кодировку -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выше гор</title> <!-- Название сайта -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"> <!-- Прикрепления шрифта Raleway из гугл фонтс-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css" />
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <!-- Тело страницы -->
+    <header class="navigation">
+        <div class="navigation-conteiner">
+            <div class="navigation-conteiner_name">
+                <a class="smooth-scroll" href="#vishe_gor">⛰ Выше гор</a> <!-- Событие скролла №1 -->
+            </div>
+            <nav>
+                <ul class="navigation-conteiner_list">
+                    <li><a class="smooth-scroll" href="#tracks">Популярные направления</a></li> <!-- Событие скролла №2 -->
+                    <li><a class="smooth-scroll" href="#">Галерея</a></li>
+                    <li><a class="smooth-scroll" href="#blog">Дополнительные материалы</a></li> <!-- Событие скролла №3 -->
+                    <li><a class="smooth-scroll" href="#about_us">О нас</a></li> <!-- Событие скролла №4 -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-page" id="vishe_gor"> <!-- До этого элемента скроллим в событии №1 -->
+            <div class="main-page_content">
+                <h1 class="main-page_content-title">Выше гор</h1>
+                <div class="main-page_content_conteiner">
+                    <h2 class="main-page_content_conteiner-title">Туристическое агентство</h2>
+                </div>
+                <h4 class="main-page_conten_text">Более 100 вариантов горных маршрутов по России под присмотром опытных
+                    инструкторов</h4>
+                <button type="button" class="smooth-scroll main-page_content_buttom" href="#contact-form">Выбрать
+                    поход</button> <!-- Событие скролла №5 -->
+            </div>
+        </section>
+
+
+        <section id="tracks">
+            <div class="cardsname">
+                <h1 class="cardsname_content">Популярные направления</h1>
+            </div>
+            <div class="card-group">
+
+                <div class="card">
+                    <img src="./assets/images/Baikal.jpg" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Зимний Байкал</h5>
+                        <p class="card-text">Уникальная возможность покататься на коньках по озеру глубоной больше
+                            полутора километров</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/images/ergak.jpg" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Ергаки</h5>
+                        <p class="card-text">Живописное место в Хакассии, где можно найти даже Зуб Дракона</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="./assets/images/Elbrus.jpg" class="card-img-top" alt="Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Эльбрус</h5>
+                        <p class="card-text">Знаменитый пятитысячник, расположившийся на юге России</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section id="gallery">
+            <div class="cardsname">
+                <h1 class="cardsname_content">Галерея</h1>
+            </div>
+        <div class="f-carousel" id="myCarousel">
+            <div class="f-carousel__viewport">
+                <div class="f-carousel__track">
+
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="./assets/images/IMG_8859.JPG" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="../assets/images/IMG_3990.JPG" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="./assets/images/IMG_8894.JPG" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+                    
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="./assets/images/forgallery2.jpg" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="./assets/images/IMG_9008.JPG" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+
+                    <div class="f-carousel__slide">
+                        <div class="card">
+                            <img src="./assets/images/IMG_8925.JPG" class="card-img-top" alt="Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>   
+
+        <section class="background">
+            <div class="card-group">
+                <div class="cardsname">
+                    <h2 class="cardsname_content">Выбрать маршрут</h2>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form"> <!--Из бутстрапа-->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Введите ваше имя и номер телефона</label>
+                        <input type="text" class="form-control" id="username" name="username">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Кратко опишите, в какой район вы бы хотели отправиться
+                        </label>
+                        <textarea type="text" required class="form-control" id="text" name="text" rows="6"></textarea>
+                    </div>
+                    <button type="submit" class="main-page_content_buttom click-btn">отправить</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="flexbox">
+            <div class="card-group">
+                <div class="cardsname">
+                    <h1 class="cardsname_content" id="blog">Полезные ссылки</h1>
+                    <!-- До этого элемента скроллим в событии №3 -->
+                </div>
+            </div>
+            <div class="flexbox_parent">
+                <div class="flexbox_parent_child"><a
+                        href="https://sport-marafon.ru/article/kak-vybrat-odezhdu-dlya-turizma/"
+                        class="flexbox_parent_child_text">Теория слоев: <br>что носить в горном походе</a> </div>
+                <div class="flexbox_parent_child"><a
+                        href="https://alpindustria.ru/articles/trekking-v-rossii-krasivye-marshruty.html"
+                        class="flexbox_parent_child_text">Треккинг в России:<br> самые красивые маршруты</a></div>
+                <div class="flexbox_parent_child"><a href="https://climbingbrothers.org/podgotovka-k-goram/"
+                        class="flexbox_parent_child_text">Занятия спортом для подготовки к походу</a></div>
+                <div class="flexbox_parent_child"><a
+                        href="https://sport-marafon.ru/article/kak-podgotovitsya-k-vyezdu-v-gory-o-mezhsezonnoy-podgotovke/"
+                        class="flexbox_parent_child_text">Что нужно знать перед походом в горы?</a> </div>
+                <div class="flexbox_parent_child"><a
+                        href="https://alpindustria.ru/articles/kak-pravilno-upakovat-ryukzak-v-pokhod.html"
+                        class="flexbox_parent_child_text">Как
+                        собрать рюкзак в поход?</a></div>
+                <div class="flexbox_parent_child"><a href="./pages/weather.html"
+                        class="flexbox_parent_child_text">Погода в горных районах</a></div>
+            </div>
+    </main>
+    <footer>
+        <section class="about-block">
+            <div class="about-block_content"><img src="./assets/images/3girls.jpg" alt="Image"></div>
+            <div class="about-block_content">
+                <h1 class="cardsname_content" id="about_us">О нас</h1> <!-- До этого элемента скроллим в событии №4 -->
+                <p class="card-text"> Однажды в 2020 году три подруги-сибирячки отправились в горный поход и в один из
+                    вечеров, сидя у костра
+                    под звездным небом, задумали создать туристическую компанию. Так появилась компания "Выше гор". За
+                    четыре года наша команда разрослась, мы создали и сводили более, чем 100 маршрутов по всей России.
+                    Нам можно доверять, ведь "Выше гор" - это дружная команда опытных интсрукторов, которых объединяет
+                    большой опыт горных и пеших походов, наличие разрядов в туризме, альпинизм и скалолазании, а также
+                    любовь к горам.</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+
+    <script src="./js/bundle.js"></script>
+    <script src="./scripts/typescript.ts"></script>
+</body>
+
+</html>
