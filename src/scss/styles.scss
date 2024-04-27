@@ -1,4 +1,6 @@
 @import "./mixin.scss";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.2/css/weather-icons.min.css);
 
 $width: 1000px;
 $breakpoint: 799px;
@@ -9,28 +11,29 @@ $nav-font-weight: 300;
 $link-hover-color: #155879;
 $transparency-color: #1c6a9160;
 $main-text-transform: uppercase;
-$main-font-weight:400;
+$main-font-weight: 400;
 $border-radius: 5px;
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    @include font
+  @include font
 }
 
 .navigation {
   height: $nav-height;
   background: $nav-background;
+  
 }
 
-.nav-container {
-  max-width: $width;
+.navigation-container {
+  max-width: 700px;
   margin: 0 auto;
 }
 
-.brandname {
+.navigation-conteiner_name {
   position: absolute;
   padding-left: 10px;
   float: left; //указывает, что элемент должен быть размещён вдоль левой или правой стороны его контейнера. Флот устравший. Чем заменить?//
@@ -38,21 +41,25 @@ body {
   font-size: 1.5em;
   text-transform: $main-text-transform;
   font-weight: $main-font-weight;
-}
+
   a {
     color: $nav-font-color;
-    text-decoration:none;
+    text-decoration: none;
   }
+}
 
 nav {
   float: right;
+
   ul {
-      list-style: none; // без маркеров
-      margin: 0;
-      padding: 0;
+    list-style: none; // без маркеров
+    margin: 0;
+    padding: 0;
+
     li {
       float: left;
       position: sticky;
+
       a {
         display: flex;
         padding: 10px 20px 0 20px; // Сверху | Справа | Снизу | Слева //
@@ -60,22 +67,28 @@ nav {
         background: $nav-background;
         color: $nav-font-color;
         text-decoration: none;
-        
-        &::before { // Добавить андерлайн //
-           transition: 0.5s;
-           height: 2px;
-           content: "";
-           position:absolute;
-           background-color: $link-hover-color;
-           width: 0%;
-           bottom: 7px;
+        font-size: 0.9em;
+
+
+        &::before {
+          // Добавить андерлайн //
+          transition: 0.5s;
+          height: 2px;
+          content: "";
+          position: absolute;
+          background-color: $link-hover-color;
+          width: 0%;
+          bottom: 7px;
         }
-        &:hover::before{
-          width: 65%;
+
+        &:hover::before {
+          width: 80%;
         }
-      } 
+      }
+
       ul li {
         min-width: 190px;
+
         a {
           padding: 15px;
           line-height: 20px;
@@ -88,7 +101,7 @@ nav {
 .main-page {
   weight: 100%;
   height: 100%;
-  background-image: url("../assets/images/snowmount.jpg");
+  background-image: url("../assets/images/IMG_8891.JPG");
   display: flex;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,49 +111,55 @@ nav {
 
   &_content {
     text-align: center;
-    width: 100%; 
+    width: 100%;
     padding-top: 0%;
     margin: 3%;
-    
+
     &_conteiner {
       padding-left: 39%;
       padding-right: 39%;
+
       h2 {
         color: $nav-font-color;
         font-size: 1.2em;
-        text-transform:lowercase;
+        text-transform: lowercase;
         font-weight: 300;
         background-color: $transparency-color;
         border-radius: $border-radius;
+      }
     }
-    }
+
     &_buttom {
       cursor: pointer;
       background-color: $nav-font-color;
       color: $link-hover-color;
       border-radius: $border-radius;
-      text-transform:uppercase;
+      text-transform: uppercase;
       padding: 10px 20px;
       border: none;
       font-weight: 800/ 2;
       font-size: 20px;
-      &:hover { /* Псевдокласс для наведения на элемент */
+
+      &:hover {
+        /* Псевдокласс для наведения на элемент */
         color: $nav-font-color;
-        background-color:$link-hover-color;
+        background-color: $link-hover-color;
         border: none;
       }
     }
   }
+
   h1 {
-  font-size: 2.5em;
-  text-transform: $main-text-transform;
-  font-weight: $main-font-weight;
-  margin: 0;
+    font-size: 2.5em;
+    text-transform: $main-text-transform;
+    font-weight: $main-font-weight;
+    margin: 0;
   }
+
   h4 {
     font-size: 1.5em;
     font-weight: $main-font-weight;
-    }
+  }
 }
 
 .cardsname {
@@ -149,106 +168,211 @@ nav {
   width: 100%;
   margin: 0 auto;
   display: flex;
-    h1 {
-      font-size: 1.5em;
-      text-transform: $main-text-transform;
-      font-weight: $main-font-weight;
-      margin: auto;
-      color: $nav-background;
-      font-weight: 150;
-      }
-    h2 {
-      font-size: 1.5em;
-      text-transform: $main-text-transform;
-      font-weight: $main-font-weight;
-      margin: auto;
-      color: $nav-font-color;
-      font-weight: 150;
-      }  
+
+  h1 {
+    font-size: 1.5em;
+    text-transform: $main-text-transform;
+    font-weight: $main-font-weight;
+    margin: auto;
+    color: $nav-background;
+    font-weight: 150;
   }
+
+  h2 {
+    font-size: 1.5em;
+    text-transform: $main-text-transform;
+    font-weight: $main-font-weight;
+    margin: auto;
+    color: $nav-font-color;
+    font-weight: 150;
+  }
+}
 
 // Form
 .background {
-  background-image: url("../assets/images/img_for_sign_up.JPG");
+  background-image: url("../assets/images/IMG_4145\ \(1\).JPG");
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .contact-form {
-   padding: 16px;
-    max-width: 40%;
-    margin: 0 auto;
-    &_button {
-      width: 100%;
-    }
+  padding: 16px;
+  max-width: 40%;
+  margin: 0 auto;
+
+  .form-label {
+    color: $nav-font-color;
+  }
+
+  &_button {
+    width: 100%;
+  }
+
 }
 
 .flexbox {
   height: min;
-&_parent {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-evenly;
-  align-items: center;
-  justify-content: space-between;
-  height: 30%;
-  &_child {
-   width: 30%;
-   text-align: center;
-   &_text {
-    color: $nav-background;
-   }
+
+  &_parent {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    align-items: center;
+    justify-content: space-between;
+    height: 30%;
+
+    &_child {
+      width: 30%;
+      text-align: center;
+
+      &_text {
+        color: $nav-background;
+      }
+    }
   }
-}
 }
 
 footer {
-  background-color: $transparency-color;
-.about-block {
-  display: flex;
-  flex-flow: row nowrap;
-  align-content: space-evenly;
-  align-items: center;
-  justify-content: center;
-  height: 70%;
-  overflow:hidden;
+  background-image: url("../assets/images/IMG_8896.JPG");
 
-  &_content {
-  text-align: left;
-  padding: 15%; // размер картинки //
-  position: relative;
-  box-sizing:border-box;
-  width:auto;
-    img {
-      position: absolute;
-      top: 0;
-      left: 10;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    &_text {
-      color: $nav-background; 
+  .about-block {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: space-evenly;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    overflow: hidden;
+
+    &_content {
+      text-align: left;
+      padding: 15%; // размер картинки //
+      position: relative;
+      box-sizing: border-box;
+      width: auto;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 10;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &_text {
+        color: $nav-background;
+      }
     }
   }
 }
+
+// Для погоды
+body {
+  @include font;
 }
 
-.swiper {
-  width: 100%;
-  height: 300px;
+#weather_wrapper {
+  width: 400px;
+  margin: 100px auto;
 }
-.swiper-slide {
+
+.weatherCard {
+  width: 400px;
+  height: 200px;
+  font-family: 'Open Sans';
+  position: relative;
+}
+
+.currentTemp {
+  width: 220px;
+  height: 200px;
+  background: rgb(41, 41, 41);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.currentWeather {
+  width: 180px;
+  height: 200px;
+  background: rgb(237, 237, 237);
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.temp {
+  font-size: 80px;
   text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  font-weight: 300;
+  color: rgb(255, 255, 255);
+  padding: 20px 0 0;
 }
 
-.swiper-slide img {
+.location {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+}
+
+.conditions {
+  font-family: weathericons;
+  font-size: 80px;
+  display: block;
+  padding: 20px 0 0;
+  text-align: center;
+}
+
+.info {
+  width: 180px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgb(42, 178, 234);
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.rain {
+  width: 50%;
+  position: absolute;
+  left: 10px;
+  word-spacing: 60px;
+  top: 3px;
+}
+
+.rain::before {
+  display: block;
+  content: '\f04e';
+  font-family: weathericons;
+  font-size: 40px;
+  left: 6px;
+  top: -4px;
+  position: absolute;
+}
+
+.wind {
+  width: 50%;
+  right: -10px;
+  position: absolute;
+  word-spacing: 60px;
+  top: 3px;
+}
+
+.wind::before {
+  display: block;
+  content: '\f050';
+  font-family: weathericons;
+  font-size: 25px;
+  left: -10px;
+  position: absolute;
+  top: 5px;
 }
