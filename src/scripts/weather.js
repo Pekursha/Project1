@@ -1,4 +1,6 @@
-const API_ID = "e4a8f58a3562607f5f3ae28e86946c5b";
+//Перенесено в TS//
+
+/*const API_ID = "e4a8f58a3562607f5f3ae28e86946c5b";
 
 console.log("weather")
 const input = document.getElementById("find-input");
@@ -34,4 +36,4 @@ console.log(city)
                  
         }
     )
-});
+});*/
